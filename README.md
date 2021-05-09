@@ -163,10 +163,10 @@ A REST API (also known as RESTful API) is an application programming interface (
 ## Development
 
 
-### Modular Development
+### Modular Development & Testing
 Every microservice is seperated into layers to be able to support "plug and play" and easy Test Driven Development
 
-Example tests are can be found in coinsorchestrator microservice.
+Example tests can be found in coinsorchestrator microservice.
 
 ### Generate a Proto
 
