@@ -1,0 +1,32 @@
+version: '3'
+services:
+
+  rankingservice:
+    build:
+      args:
+        MICROSERVICE_DIR: rankingservice
+      context: .
+      dockerfile: ./Dockerfile.local
+
+  pricingservice:
+    build:
+      args:
+        MICROSERVICE_DIR: pricingservice
+      context: .
+      dockerfile: ./Dockerfile.local
+
+  coinsorchestrator:
+    build:
+      args:
+        MICROSERVICE_DIR: coinsorchestrator
+      context: .
+      dockerfile: ./Dockerfile.local
+
+  cryptosgateway:
+    ports:
+      - "8080:8080"
+    build:
+      args:
+        MICROSERVICE_DIR: cryptosgateway
+      context: .
+      dockerfile: ./Dockerfile.local

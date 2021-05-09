@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package rankingservice;
+option go_package = "github.com/angelospillos/rankingservice/pb";
+
+message rankingRequest {
+    int32 limit = 1;
+}
+
+message rank {
+    int32 order = 1;
+    string symbol = 2;
+}
+
+message rankingResponse {
+    repeated rank ranks = 1;
+}
+
+service rankingService {
+    rpc getRankings(rankingRequest) returns (rankingResponse) {};
+}

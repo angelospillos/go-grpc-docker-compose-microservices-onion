@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package coinsorchestrator;
+option go_package = "github.com/angelospillos/coinsorchestrator/pb";
+
+message topCoinsByMarketCapRequest {
+    int32 limit = 1;
+}
+
+message coin {
+    int32 rank = 1;
+    string symbol = 2;
+    float price = 3;
+}
+
+message topCoinsByMarketCapResponse {
+    repeated coin coins = 1;
+}
+
+service coinsOrchestrator {
+    rpc getTopCoinsByMarketCap(topCoinsByMarketCapRequest) returns (topCoinsByMarketCapResponse) {};
+}

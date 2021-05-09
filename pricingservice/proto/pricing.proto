@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package pricingservice;
+option go_package = "github.com/angelospillos/pricingservice/pb";
+
+message pricingRequest {
+    repeated string symbols = 1;
+}
+
+message pricingResponse {
+    map<string, float> quotes = 1;
+}
+
+service pricingService {
+    rpc getPricing(pricingRequest) returns (pricingResponse) {};
+}
+
